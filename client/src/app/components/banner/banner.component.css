@@ -1,0 +1,21 @@
+.admin-product-container{
+    width: 100%;
+}
+.product-item{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.product-image{
+    max-width: 1700px;
+}
+.button-container {
+    display: flex;
+    justify-content: center; /* Căn giữa các button theo chiều ngang */
+    gap: 10px; /* Khoảng cách giữa hai button */
+    margin-top: 20px; /* Khoảng cách phía trên, nếu cần */
+}
+
+button {
+    padding: 10px 20px; /* Kích thước button */
+}

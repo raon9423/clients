@@ -1,0 +1,61 @@
+<div class="chat-container">
+    <div id="chat-box"></div>
+    <form id="chat-form">
+      <input type="text" id="message-input" placeholder="Enter your message" />
+      <button type="submit">Send</button>
+    </form>
+  </div>
+  
+  <script src="https://sf-cdn.coze.com/obj/unpkg-va/flow-platform/chat-app-sdk/1.0.0-beta.4/libs/oversea/index.js"></script>
+  <script>
+    new CozeWebSDK.WebChatClient({
+      config: {
+        bot_id: '7445874937069781008',
+      },
+      componentProps: {
+        title: 'Coze',
+      },
+    });
+  
+    document.getElementById('chat-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const messageInput = document.getElementById('message-input');
+    const message = messageInput.value.trim();
+    if (message) {
+      const chatBox = document.getElementById('chat-box');
+      const messageElement = document.createElement('div');
+      messageElement.textContent = message;
+      chatBox.appendChild(messageElement);
+      messageInput.value = '';
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      fetch('https://api.coze.com/v3/chat', {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Bearer pat_OYDacMzM3WyOWV3Dtj2bHRMymzxP****',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          bot_id: '7445874937069781008',
+          user_id: '123123',
+          stream: false,
+          auto_save_history: true,
+          additional_messages: [
+            {
+              role: 'user',
+              content: message,
+              content_type: 'text'
+            }
+          ]
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    }
+  });
+</script>

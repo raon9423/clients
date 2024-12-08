@@ -1,0 +1,61 @@
+<form *ngIf="!showRegisterForm && !showForgotPasswordForm && !showOtpForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="email">Gmail:</label>
+      <input type="email" id="email" name="email" [(ngModel)]="email" required>
+    </div>
+    <div>
+      <label for="password">Mật khẩu:</label>
+      <input type="password" id="password" name="password" [(ngModel)]="password" required>
+    </div>
+    <button type="submit">Đăng Nhập</button>
+    <br><br>
+    <button (click)="loginWithGoogle()">Đăng nhập với Google</button>
+    <p><a (click)="toggleForm()">Đăng ký ngay</a></p>
+    <p><a (click)="toggleForgotPasswordForm()">Quên mật khẩu?</a></p>
+  </form>
+  
+  <form *ngIf="showRegisterForm" (ngSubmit)="onRegister()">
+    <div>
+      <label for="registerEmail">Gmail:</label>
+      <input type="email" id="registerEmail" name="registerEmail" [(ngModel)]="registerEmail" required>
+    </div>
+    <div>
+      <label for="registerPassword">Mật khẩu:</label>
+      <input type="password" id="registerPassword" name="registerPassword" [(ngModel)]="registerPassword" required>
+    </div>
+    <div>
+      <label for="registerName">Tên:</label>
+      <input type="text" id="registerName" name="registerName" [(ngModel)]="registerName" required>
+    </div>
+    <div>
+      <label for="registerPhone">Số điện thoại:</label>
+      <input type="text" id="registerPhone" name="registerPhone" [(ngModel)]="registerPhone" required>
+    </div>
+    <button type="submit">Đăng Ký</button>
+    <br><br>
+    <button (click)="loginWithGoogle()">Đăng ký với Google</button>
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+    <p>Đã có tài khoản? <a (click)="toggleForm()">Đăng nhập ngay</a></p>
+  </form>
+  
+  <form *ngIf="showForgotPasswordForm && !showOtpForm" (ngSubmit)="sendOtp()">
+    <div>
+      <label for="forgotPasswordEmail">Gmail:</label>
+      <input type="email" id="forgotPasswordEmail" name="forgotPasswordEmail" [(ngModel)]="forgotPasswordEmail" required>
+    </div>
+    <button type="submit">Gửi OTP</button>
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  </form>
+  
+  <form *ngIf="showOtpForm" (ngSubmit)="verifyOtp()">
+    <div>
+      <label for="otp">OTP:</label>
+      <input type="text" id="otp" name="otp" [(ngModel)]="otp" required>
+    </div>
+    <div>
+      <label for="newPassword">Mật khẩu mới:</label>
+      <input type="password" id="newPassword" name="newPassword" [(ngModel)]="newPassword" required>
+    </div>
+    <button type="submit">Xác nhận</button>
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  </form>

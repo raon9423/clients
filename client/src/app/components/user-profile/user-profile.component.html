@@ -1,0 +1,32 @@
+<div class="container">
+  <div *ngIf="showProfile" class="profile-form">
+    <div class="profile-details">
+      <div class="left-section">
+        <div class="avatar">
+          <img *ngIf="user?.avatar" [src]="user.avatar" alt="User Avatar">
+        </div>
+        <input type="file" (change)="onFileSelected($event)" hidden #fileInput>
+        <button class="upload-btn" (click)="fileInput.click()">Upload ảnh</button>
+      </div>
+      <div class="right-section">
+        <p><strong>Name:</strong> {{ user?.name }}</p>
+        <p><strong>Email:</strong> {{ user?.email }}</p>
+        <p><strong>Phone:</strong> {{ user?.phone }}</p>
+      </div>
+    </div>
+    <div class="button-group">
+      <button (click)="toggleForms()">Thay đổi mật khẩu</button>
+      <button (click)="logout()">Đăng xuất</button>
+    </div>
+  </div>
+  <div *ngIf="!showProfile" class="password-form">
+    <h1>Thay đổi mật khẩu</h1>
+    <form (ngSubmit)="onChangePassword()">
+      <label for="oldPassword">Mật khẩu cũ của bạn</label>
+      <input type="password" id="oldPassword" [(ngModel)]="oldPassword" name="oldPassword" required>
+      <label for="newPassword">Mật khẩu mới của bạn</label>
+      <input type="password" id="newPassword" [(ngModel)]="newPassword" name="newPassword" required>
+      <button type="submit">Thay đổi mật khẩu</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+/* Tổng quan */
+.header {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Thanh trên cùng */
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #004b93;
+    color: white;
+    padding: 5px 20px;
+  }
+  
+  .contact-info span {
+    margin-right: 20px;
+  }
+  
+  .language-switch span {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  /* Menu chính */
+  .main-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .school-name strong {
+    color: #004b93;
+    font-size: 18px;
+  }
+  
+  .school-name small {
+    font-size: 12px;
+    color: gray;
+  }
+  
+  /* Navigation */
+  .nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav li {
+    margin-right: 20px;
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: #004b93;
+    font-weight: bold;
+  }
+  
+  .nav a:hover {
+    color: red;
+  }
+  
+  /* Hành động (Tìm kiếm) */
+  .actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .actions input {
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 5px;
+    margin-right: 10px;
+  }
+  
+  .search-btn {
+    background-color: #004b93;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .search-btn:hover {
+    background-color: #003366;
+  }
+  

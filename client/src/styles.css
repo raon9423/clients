@@ -1,0 +1,43 @@
+body {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  body {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  body.dark-theme {
+    background-color: #000000;
+    color: #ffffff;
+  }
+  
+  body.dark-theme .header {
+    background-color: black;
+    color: white;
+  }
+
+  body.dark-theme .footer {
+    background-color: rgb(0, 0, 0);
+    color: white;
+  }
+
+  body.dark-theme .product-item {
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  body.dark-theme .filter-search-container {
+    background-color: #000000;
+    color: #ffffff;
+  }
+  
+  body.dark-theme .header .logo,
+  body.dark-theme .header .admin-link,
+  body.dark-theme .header .nav-links a {
+    color: white;
+  }
+  body.dark-theme .header button {
+    background-color: #ffffff;
+  }

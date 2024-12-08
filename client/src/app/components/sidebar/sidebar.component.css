@@ -1,0 +1,31 @@
+.admin-layout {
+  display: flex;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+.sidebar {
+  width: 200px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-nav div {
+  margin-bottom: 20px;
+}
+
+.sidebar-nav div:last-child {
+  margin-bottom: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+.main-content {
+  width: 700px;
+}

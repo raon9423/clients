@@ -1,0 +1,22 @@
+<header class="header">
+  <div class="container">
+    <div class="left-section">
+      <a href="/home" class="logo">Raonus</a>
+      <a *ngIf="isAdmin" href="/admin" class="admin-link">{{ adminText }}</a>
+    </div>
+    <nav class="right-section">
+      <button class="menu-toggle" (click)="toggleMenu()">
+        <span class="material-icons">menu</span>
+      </button>
+      <ul class="nav-links" [ngClass]="{'active': isMenuOpen}">
+        <li><a href="/home">{{ homeText }}</a></li>
+        <li><a href="/shop">{{ shopText }}</a></li>
+        <li><a href="/cart">{{ cartText }}</a></li>
+        <li><button (click)="changeTheme()" href="/">{{ interfaceText }}</button></li>
+        <li><button (click)="changeLanguage()">{{ languageButtonText }}</button></li>
+        <!-- <li><a href="/chat">{{ searchText }}</a></li> -->
+        <li><a href="/login">{{ loginText }}</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

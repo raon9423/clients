@@ -1,0 +1,135 @@
+.admin-product-container {
+    padding: 20px; /* Thêm khoảng cách bên trong cho container */
+    text-align: center;
+}
+
+.product-grid {
+    margin: 0 auto;
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-item {
+    background-color: #f9f9f9; /* Thêm màu nền cho từng sản phẩm */
+    padding: 10px; /* Thêm khoảng cách bên trong cho từng sản phẩm */
+    border: 1px solid #e0e0e0; /* Thêm viền cho từng sản phẩm */
+    border-radius: 5px; /* Bo góc cho từng sản phẩm */
+    transition: transform 0.2s; /* Hiệu ứng chuyển động khi hover */
+}
+
+.page-number {
+    margin: 0 15px; 
+    font-weight: bold; 
+  }
+
+.buttonAdd {
+    background-color: #147ea2; /* Màu nền xanh */
+    color: white; /* Màu chữ trắng */
+    border: none; /* Không có viền */
+    padding: 10px 15px; /* Khoảng cách bên trong */
+    text-align: center; /* Căn giữa chữ */
+    text-decoration: none; /* Không có gạch chân */
+    display: inline-block; /* Hiển thị inline */
+    font-size: 16px; /* Kích thước chữ */
+    margin-top: 10px; /* Khoảng cách trên */
+    cursor: pointer; /* Con trỏ chuột khi di chuột qua */
+    border-radius: 5px; /* Bo góc */
+}
+.next-page {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+  }
+.pagination {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    margin: 20px 0; 
+  }
+
+.product-image {
+    max-width: 100%; /* Đảm bảo hình ảnh không vượt quá kích thước của sản phẩm */
+    height: auto; /* Giữ tỷ lệ hình ảnh */
+}
+
+.product-name {
+    font-weight: bold; /* Đậm tên sản phẩm */
+    margin-top: 5px; /* Khoảng cách trên cho tên sản phẩm */
+}
+
+.product-price {
+    color: #ff5722; /* Màu sắc cho giá sản phẩm */
+    font-size: 1.2em; /* Kích thước chữ cho giá sản phẩm */
+}
+
+.filter-search-wrapper {
+    width: 900px;
+    margin: 0 auto;
+  }
+  
+  .filter-search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    margin-left: -11px;
+  }
+  
+  .category-filter {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .category-filter label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .category-filter select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 200px;
+  }
+  
+  .search-bar {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .search-bar input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-right: 15px;
+    width: 200px;
+  }
+  
+  .search-bar button {
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: -10px;
+  }
+  
+  .search-bar button:hover {
+    background-color: #0056b3;
+  }

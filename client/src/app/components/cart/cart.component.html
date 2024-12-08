@@ -1,0 +1,52 @@
+<div class="test" style="max-width: 902px; margin-left: 358px;">
+  <div *ngFor="let item of cartItems" class="cart-item">
+    <img [src]="item.product?.image" alt="{{ item.product?.name }}" class="product-image" style="margin-bottom: 10px;">
+    <div class="item-details" style="margin-bottom: 10px;">
+      <div class="quantity-update" style="margin-bottom: 10px;">
+        <p>{{ item.product?.name }}</p>&ensp;
+        <label for="quantity-{{ item.product?.id }}">Số lượng:</label>
+        <input type="number" [(ngModel)]="item.quantity" name="quantity-{{ item.product?.id }}" style="margin: 0 5px;">
+        <p>Tổng: {{ item.product?.price * item.quantity | currency:'VND':'symbol':'1.0-0' }}</p>
+        <button (click)="updateCart(item)">Cập nhật</button>
+      </div>
+      <p>Tổng: {{ item.product?.price * item.quantity | currency:'VND':'symbol':'1.0-0' }}</p>
+      <button class="test" (click)="showCheckoutForm(item)" style="margin-right: 630px;">Thanh toán giỏ hàng</button>
+    </div>
+  </div>
+</div>
+
+<div class="payment-options">
+  <label>
+    <input type="radio" name="payment" value="cod"> Thanh toán khi nhận hàng
+  </label>
+  <label>
+    <input type="radio" name="payment" value="zalopay"> Thanh toán ZaloPay
+  </label>
+</div>
+<div *ngIf="checkoutItem" class="checkout-form">
+  <h3>Điền thông tin</h3>
+  <form (ngSubmit)="checkout()">
+    <input type="hidden" [(ngModel)]="checkoutItem.cart_id" name="cart_id">
+    <div>
+      <label for="note">Ghi chú</label>
+      <textarea [(ngModel)]="checkoutItem.note" name="note"></textarea>
+    </div>
+    <div>
+      <label for="phone">Số điện thoại</label>
+      <input type="text" [(ngModel)]="checkoutItem.phone" name="phone">
+    </div>
+    <div>
+      <label for="address">Địa chỉ</label>
+      <input type="text" [(ngModel)]="checkoutItem.address" name="address">
+    </div>
+    <button type="submit">Gửi</button>
+  </form>
+</div>
+
+<div *ngIf="submittedOrder" class="order-summary">
+  <h3>Thông tin đơn hàng</h3>
+  <p><strong>Ghi chú</strong> {{ submittedOrder.note }}</p>
+  <p><strong>Số điện thoại</strong> {{ submittedOrder.phone }}</p>
+  <p><strong>Địa chỉ</strong> {{ submittedOrder.address }}</p>
+  <p><strong>Tổng</strong> {{ submittedOrder.total }}</p>
+</div>

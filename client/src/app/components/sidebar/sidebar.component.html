@@ -1,0 +1,45 @@
+<div class="admin-layout">
+  <div class="sidebar">
+    <nav class="sidebar-nav">
+      <div class="nav-items">
+        <div class="nav-item" (click)="onSelectComponent('statistical')">
+          <i class="fas fa-chart-line"></i> <span>Thống Kê</span>
+        </div>
+        <div class="nav-item" (click)="onSelectComponent('product')">
+          <i class="fas fa-box"></i> <span>Sản Phẩm</span>
+        </div>
+        <!-- <div class="nav-item" (click)="onSelectComponent('news')">
+          <i class="fas fa-newspaper"></i> <span>News</span>
+        </div> -->
+        <div class="nav-item" (click)="onSelectComponent('category')">
+          <i class="fas fa-shopping-cart"></i> <span>Danh Mục</span>
+        </div>
+        <div class="nav-item" (click)="onSelectComponent('order')">
+          <i class="fas fa-shopping-cart"></i> <span>Đơn Hàng</span>
+        </div>
+        <div class="nav-item" (click)="onSelectComponent('brand')">
+          <i class="fas fa-shopping-cart"></i> <span>Thương Hiệu</span>
+        </div>
+        <!-- <div class="nav-item" (click)="onSelectComponent('feedback')">
+          <i class="fas fa-shopping-cart"></i> <span>Feedback</span>
+        </div>
+        <div class="nav-item" (click)="onSelectComponent('banner')">
+          <i class="fas fa-shopping-cart"></i> <span>Banner</span>
+        </div> -->
+        <!-- <div class="nav-item" (click)="onSelectComponent('user')">
+          <i class="fas fa-shopping-cart"></i> <span>Người Dùng</span>
+        </div> -->
+      </div>
+    </nav>
+  </div>
+  <div class="main-content">
+    <app-admin-product *ngIf="selectedComponent === ''"></app-admin-product>
+    <app-admin-product *ngIf="selectedComponent === 'product'"></app-admin-product>
+    <app-admin-category *ngIf="selectedComponent === 'category'"></app-admin-category>
+    <app-admin-new *ngIf="selectedComponent === 'news'"></app-admin-new>
+    <app-admin-order *ngIf="selectedComponent === 'order'"></app-admin-order>
+    <app-admin-brand *ngIf="selectedComponent === 'brand'"></app-admin-brand>
+    <app-admin-banner *ngIf="selectedComponent === 'brand'"></app-admin-banner>
+    <!-- <app-admin-statistical *ngIf="selectedComponent === 'statistical'"></app-admin-statistical> -->
+  </div>
+</div>

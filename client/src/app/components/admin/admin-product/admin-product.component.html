@@ -1,0 +1,83 @@
+<div class="admin-product-container">
+  <button class="add-product-btn" (click)="showAddProductForm()">Thêm sản phẩm mới</button>
+  <button class="add-product-btn" *ngIf="isAddProductFormVisible" (click)="hideAddProductForm()">Trở lại</button>
+  <div *ngIf="isAddProductFormVisible" class="add-product-form">
+    <div class="form-group">
+      <div class="label">Nhập hình ảnh:</div>
+      <input type="file" (change)="onImageUpload($event)" placeholder="Hình ảnh" />
+    </div>
+    <div class="form-group">
+      <div class="label">Nhập tên sản phẩm:</div>
+      <input type="text" [(ngModel)]="newProduct.name" placeholder="Tên sản phẩm" />
+    </div>
+    <div class="form-group">
+      <div class="label">Nhập giá:</div>
+      <input type="number" [(ngModel)]="newProduct.price" placeholder="Giá" />
+    </div>
+    
+    <div class="form-group">
+      <div class="label">Nhập giá cũ:</div>
+      <input type="number" [(ngModel)]="newProduct.oldPrice" placeholder="Giá cũ" />
+    </div>
+    
+    <div class="form-group">
+      <div class="label">Nhập mô tả sản phẩm:</div>
+      <textarea [(ngModel)]="newProduct.description" placeholder="Mô tả sản phẩm"></textarea>
+    </div>
+    
+    <div class="form-group">
+      <div class="label">Nhập thông số kỹ thuật:</div>
+      <input type="text" [(ngModel)]="newProduct.specification" placeholder="Thông số kỹ thuật" />
+    </div>
+    
+    <div class="form-group">
+      <div class="label">Nhập số lượng mua:</div>
+      <input type="number" [(ngModel)]="newProduct.buyTurn" placeholder="Số lượt mua" />
+    </div>
+    
+    <div class="form-group">
+      <div class="label">Nhập số lượng kho:</div>
+      <input type="number" [(ngModel)]="newProduct.quantity" placeholder="Số lượng" />
+    </div>
+    
+    <div class="form-group">
+      <div class="label">Nhập danh mục:</div>
+      <input type="number" [(ngModel)]="newProduct.category_id" placeholder="ID danh mục" />
+    </div>
+    
+    <div class="form-group">
+      <div class="label">Nhập thương hiệu:</div>
+      <input type="number" [(ngModel)]="newProduct.brand_id" placeholder="ID thương hiệu" />
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center; margin-top: 5px;">
+      <button class="test" (click)="addProduct()" style="margin-left: 556px;">Lưu sản phẩm</button>
+    </div>    
+  </div>
+  <div *ngIf="isProductListVisible"> 
+    <table class="product-list">
+      <thead>
+        <tr>  
+          <th>ID</th>
+          <th>Tên sản phẩm</th>
+          <th>Thao tác</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of data">
+          <td>{{ item.id }}</td>
+          <td class="product-name">{{ item.name }}</td>
+          <td class="action-buttons">
+            <button class="detail-button">Xem chi tiết</button>
+            <button class="edit-button" (click)="updateProduct(item.id)">Sửa</button>
+            <button class="delete-button" (click)="deleteProduct(item)">Xóa</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="pagination">
+      <button (click)="previousPage()" [disabled]="currentPage === 1" class="next-page">Quay lại</button>
+      <span class="page-number">{{ currentPage }}</span> 
+      <button (click)="nextPage()" [disabled]="currentPage === totalPages" class="next-page">Tiếp theo</button>
+    </div>
+  </div>
+</div>

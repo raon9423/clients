@@ -1,0 +1,23 @@
+<div *ngIf="data.length > 0" class="product-detail" style="max-width: 700px; display: flex;">
+    <div class="main-image" style="flex: 1; margin-right: 20px;">
+      <img [src]="data[0].image" alt="{{ data[0].name }}" style="width: 200px; height: 200px;" />
+      <h6>Hình ảnh sản phẩm</h6>
+        <div *ngFor="let image of data[0].productimages" style="display: inline-block; margin: 5px;">
+            <img [src]="image.image_url" alt="{{ data[0].name }}" style="width: 100px; height: auto;" />
+        </div>
+    </div>
+    <div class="product-info" style="flex: 2;">
+      <h1>{{ data[0].name }}</h1>
+      <p>Mô tả: {{ data[0].description }}</p>
+      <p>Thông số kỹ thuật: {{ data[0].specification }}</p>
+      <p>Giá: {{ data[0].price | currency }}</p>
+      <button >Thêm vào giỏ hàng</button>
+      <button (click)="goBack()">Quay lại</button>
+      <h2>Thuộc tính sản phẩm</h2>
+      <ul>
+        <li *ngFor="let attribute of data[0].productattribute">
+          {{ attribute.value }}
+        </li>
+      </ul>
+    </div>
+  </div>

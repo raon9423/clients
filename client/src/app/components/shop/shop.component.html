@@ -1,0 +1,30 @@
+<div class="admin-product-container">
+  <div class="filter-search-wrapper">
+    <div class="filter-search-container">
+      <div class="category-filter">
+        <select id="category" (change)="onCategoryChange($event)">
+          <option value="">{{ allCategoriesText }}</option>
+          <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+        </select>
+      </div>
+
+      <div class="search-bar">
+        <input type="text" [(ngModel)]="searchTerm" [placeholder]="searchPlaceholder" />
+        <button (click)="searchProducts()">{{ searchButtonText }}</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-grid" style="max-width: 900px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;" *ngIf="filteredData.length > 0">
+    <div class="product-item" *ngFor="let item of filteredData">
+      <a href="javascript:void(0)" (click)="goToProductDetails(item.id)">
+        <img [src]="item.image" alt="{{ item.name }}" class="product-image" />
+      </a>
+      <div class="product-name">{{ item.name }}</div>
+      <div class="product-price">{{ item.price | currency:'VND':'symbol':'1.0-0' }}</div>
+      <button class="buttonAdd" (click)="addToCart(item)">{{ addToCartText }}</button>
+    </div>    
+  </div>
+  <div class="pagination">
+  </div>
+</div>

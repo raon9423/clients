@@ -1,0 +1,29 @@
+
+<div class="admin-product-container">
+  
+    <button class="add-product-btn">Thêm danh mục mới</button>
+  
+    <table class="product-list">
+      <thead>
+        <tr>  
+          <th>ID</th>
+          <th>Tên sản phẩm</th>
+          <th>Thao tác</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of data">
+          <td>{{ item.id }}</td>
+          <td class="product-name">{{ item.name }}</td>
+          <td class="action-buttons">
+            <button class="edit-button">Sửa</button>
+            <button class="delete-button" (click)="deleteProduct(item)">Xóa</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- <div class="pagination">
+      <button (click)="previousPage()" [disabled]="currentPage === 1">Quay lại</button>
+      <button (click)="nextPage()" [disabled]="currentPage === totalPages">Tiếp theo</button>
+    </div> -->
+</div>

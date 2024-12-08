@@ -1,0 +1,55 @@
+.product-detail {
+    display: flex;
+    max-width: 900px;
+    margin: 0 auto; /* Căn giữa */
+    border: 1px solid #ccc; /* Đường viền xung quanh */
+    padding: 20px; /* Khoảng cách bên trong */
+    border-radius: 8px; /* Bo góc */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+}
+
+.main-image {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.product-info {
+    flex: 2;
+}
+
+.product-info h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    margin: 5px 0;
+}
+
+.product-info h2 {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.product-info ul {
+    list-style-type: none; /* Bỏ dấu chấm */
+    padding: 0; /* Bỏ khoảng cách bên trong */
+}
+
+.product-info li {
+    background: #f9f9f9; /* Màu nền cho thuộc tính */
+    margin: 5px 0; /* Khoảng cách giữa các thuộc tính */
+    padding: 5px; /* Khoảng cách bên trong */
+    border-radius: 4px; /* Bo góc */
+}
+
+.product-images {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép xuống dòng */
+}
+
+.product-images img {
+    width: 100px;
+    height: auto;
+    margin: 5px; /* Khoảng cách giữa các ảnh */
+}

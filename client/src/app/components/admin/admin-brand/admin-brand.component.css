@@ -1,0 +1,160 @@
+.product-list {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.add-product-btn{
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+  margin-right: 20px;
+}
+
+.product-list th, .product-list td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.product-list th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.product-list tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.product-list tr:hover {
+  background-color: #f5f5f5;
+}
+
+.product-name {
+  font-weight: bold;
+  color: #333;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;  
+}
+
+.edit-button, .delete-button, .detail-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+  margin-right: 20px;
+}
+
+/* .edit-button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #45a049;
+}
+
+.detail-button {
+  background-color: #007bff;
+  color: white;
+}
+
+.detail-button:hover {
+  background-color: #0056b3;
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #d32f2f;
+} */
+
+.pagination {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  margin: 20px 0; 
+}
+
+.page-number {
+  margin: 0 15px; 
+  font-weight: bold; 
+}
+
+.next-page {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+}
+
+.add-product-form {
+  background-color: #f9f9f9; /* Màu nền cho form */
+  padding: 15px; /* Giảm khoảng cách bên trong */
+  border-radius: 8px; /* Bo góc */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng */
+  margin-bottom: 15px; /* Giảm khoảng cách dưới form */
+  max-width: 700px; /* Giới hạn chiều rộng tối đa của form */
+  /* max-height: 500px;  */
+  /* overflow-y: auto;  */
+  margin: auto; /* Căn giữa form */
+  margin-top: 20px; 
+}
+
+.add-product-form input,
+.add-product-form textarea {
+  width: 70%;
+  padding: 6px; 
+  margin: 6px 0; 
+  border: 1px solid #ccc;  
+  border-radius: 4px; 
+  font-size: 14px; 
+}
+
+.add-product-form button {
+  background-color: #0c739f; 
+  color: white; /* Màu chữ */
+  padding: 6px 10px; /* Giảm khoảng cách bên trong */
+  border: none; /* Không có đường viền */
+  border-radius: 4px; /* Bo góc */
+  cursor: pointer; /* Con trỏ khi di chuột */
+  font-size: 14px; /* Giữ kích thước chữ */
+    
+}
+
+.add-product-form button:hover {
+  background-color: #218838; /* Màu nền khi di chuột */
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Thêm khoảng cách giữa các nhóm */
+}
+
+.label {
+  width: 200px; /* Đặt chiều rộng cho nhãn */
+  margin-right: 10px; /* Khoảng cách giữa nhãn và input */
+}
+
+.form-group input,
+.form-group textarea {
+  flex: 2; /* Chiếm 2 phần không gian */
+  padding: 5px; /* Khoảng cách bên trong input */
+}
